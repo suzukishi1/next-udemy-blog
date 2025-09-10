@@ -1,0 +1,11 @@
+model Post {
+  id        String   @id @default(cuid())
+  title     String
+  content   String
+  topImage  String?
+  published Boolean  @default(true)
+  authorId  String
+  author    User     @relation(fields: [authorId], references: [id], onDelete: Cascade)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
