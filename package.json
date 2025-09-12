@@ -2,6 +2,10 @@
   "name": "next-udemy-blog",
   "version": "0.1.0",
   "private": true,
+  "prisma": {
+    "schema": "./prisma",
+    "seed": "ts-node -r tsconfig-paths/register --compiler-options {\"module\":\"CommonJS\"} prisma/seed.ts"
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -12,7 +16,6 @@
     "@prisma/client": "^6.15.0",
     "@types/bcryptjs": "^2.4.6",
     "bcryptjs": "^2.4.3",
-    "dotenv": "^17.2.2",
     "next": "15.5.2",
     "prisma": "^6.15.0",
     "react": "19.1.0",
@@ -28,6 +31,7 @@
     "eslint-config-next": "15.5.2",
     "tailwindcss": "^4",
     "ts-node": "^10.9.2",
+    "tsconfig-paths": "^4.2.0",
     "typescript": "^5"
   }
 }
