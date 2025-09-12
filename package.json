@@ -2,9 +2,6 @@
   "name": "next-udemy-blog",
   "version": "0.1.0",
   "private": true,
-  "prisma": {
-    "schema": "./prisma"
-  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -15,6 +12,7 @@
     "@prisma/client": "^6.15.0",
     "@types/bcryptjs": "^2.4.6",
     "bcryptjs": "^2.4.3",
+    "dotenv": "^17.2.2",
     "next": "15.5.2",
     "prisma": "^6.15.0",
     "react": "19.1.0",
