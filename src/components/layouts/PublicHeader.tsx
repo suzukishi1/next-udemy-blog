@@ -1,12 +1,12 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
 import {
   NavigationMenu,
   NavigationMenuItem,
   NavigationMenuLink,
   NavigationMenuList,
 } from "@/components/ui/navigation-menu";
+import SearchBox from "../post/SearchBox";
 
 export default function PublicHeader() {
   return (
@@ -25,14 +25,7 @@ export default function PublicHeader() {
             </NavigationMenuList>
           </NavigationMenu>
           <div className="flex items-center gap-4">
-            <Input
-              placeholder="記事を検索…"
-              // Inputコンポーネントが bg-transparent に指定されている
-              // レクチャーでは背景色を指定せず白になっているためバージョン違いが原因と思われる
-              // bg-background を明示する
-              // className="w-[200px] lg:w-[300px]"
-              className="w-[200px] lg:w-[300px] bg-background"
-            />
+            <SearchBox />
             <Button variant="outline" asChild>
               <Link href="/login">ログイン</Link>
             </Button>

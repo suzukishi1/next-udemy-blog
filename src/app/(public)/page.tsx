@@ -1,28 +1,24 @@
 import PostCard from "@/components/post/PostCard";
-import { getPosts } from "@/lib/post";
+import { getPosts, searchPosts } from "@/lib/post";
+import { Post } from "@/types/post";
 
-// const post1 = {
-//   id: "1",
-//   title: "title",
-//   content: "content",
-//   topImage: "https://picsum.photos/seed/1/600/400",
-//   createdAt: new Date("2025/9/12"),
-//   author: {
-//     name: "author",
-//   },
-// };
-// const post2 = {
-//   id: "2",
-//   title: "title2",
-//   content: "content2",
-//   topImage: "https://picsum.photos/seed/2/600/400",
-//   createdAt: new Date("2025/9/13"),
-//   author: {
-//     name: "author2",
-//   },
-// };
-export default async function PostsPage() {
-  const posts = await getPosts();
+type SearchParams = {
+  search?: string;
+};
+
+export default async function PostsPage({
+  searchParams,
+}: {
+  searchParams: Promise<SearchParams>;
+}) {
+  const { search } = await searchParams;
+  const query = search || "";
+
+  // const posts = await getPosts();
+  const posts = query
+    ? ((await searchPosts(query)) as Post[])
+    : ((await getPosts()) as Post[]);
+
   return (
     <>
       <div className="container mx-auto px-4 py-8">
