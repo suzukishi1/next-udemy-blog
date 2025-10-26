@@ -8,7 +8,7 @@ export default async function DashBoardPage() {
   const session = await auth();
   const userId = session?.user?.id;
 
-  if (!session?.user.email || !userId) {
+  if (!session?.user?.email || !userId) {
     throw new Error("不正なリクエストです");
   }
 
