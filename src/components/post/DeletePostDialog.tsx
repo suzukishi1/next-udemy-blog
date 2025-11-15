@@ -8,6 +8,7 @@ import {
   AlertDialogHeader,
   AlertDialogTitle,
 } from "@/components/ui/alert-dialog";
+import { deletePost } from "@/lib/actions/deletePost";
 
 type DeletePostProps = {
   postId: string;
